@@ -1,0 +1,73 @@
+body {
+  padding-top: 0px;
+  font-family: sans-serif;
+  background-image: url(https://wallpaper.dog/large/20419400.jpg);
+  background-size: cover;
+  width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+p {
+  color: white;
+  font-size: 20px;
+  display: block;
+  margin: 5px;
+  text-align: left;
+}
+.How {
+  text-align: center;
+}
+
+#box {
+  margin: auto;
+  text-align: center;
+  padding-top: 5px;
+  margin-bottom: 5px;
+  font-size: 30px;
+  border: 5px solid;
+  border-radius: 10px;
+  background-color: rgb(59, 5, 106);
+  color: white;
+  width: 389px;
+  height: 80px;
+}
+
+table {
+  margin: auto;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 35px;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+td {
+  border: 1px solid;
+}
+
+#numbers {
+  margin: auto;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  border: 5px solid;
+  background-color: rgb(159, 151, 167);
+  width: 200px;
+  height: 80px;
+  color: white;
+}
+
+#upgradeLevel {
+  margin: auto;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  border: 5px solid;
+  border-radius: 10px;
+  background-color: gold;
+  width: 300px;
+  height: 50px;
+}
