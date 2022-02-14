@@ -90,20 +90,25 @@ num += 1;
   
   score.innerHTML = num;
   // baller upgrades to 2x
-  } if(num>= 5){
+  } if(num>= 50){
   num *2;
-  upgradeLevel.innerHTML="Baller Level"
+  upgradeLevel.innerHTML="Baller"
   }
-  // roling in the doe
-  if(num >= 10){
-  num+=12;
-  upgradeLevel.innerHTML="rolling in the doe"
+  // 
+  if(num >= 150){
+  num *5;
+  upgradeLevel.innerHTML="loaded"
   }
   
-  // printing money
-  if(num >= 15) {
-  num+=16;
-  upgradeLevel.innerHTML = "printing";
+  // 
+  if(num >= 500) {
+  num *20;
+  upgradeLevel.innerHTML = "Dinero";
   }
 
+  if(num >= 500) {
+    num *1000;
+    upgradeLevel.innerHTML = "bigshot";
+    }
+  
 
