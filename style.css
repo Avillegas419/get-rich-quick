@@ -46,7 +46,7 @@ td {
   border: 1px solid;
 }
 
-#numbers {
+#score {
   margin: auto;
   text-align: center;
   padding-top: 20px;
@@ -70,4 +70,8 @@ td {
   background-color: gold;
   width: 300px;
   height: 50px;
+}
+
+.score {
+  color: white;
 }

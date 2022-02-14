@@ -1,4 +1,17 @@
-let num = 0; 
+let num = 0
+var score = 0;
+
+let ballerCost = 50;
+let baller = 0 
+let loadedCost = 150;
+let loaded = 0
+let DineroCost = 500;
+let Dinero = 0
+let bigshotCost = 100000;
+let bigshot = 0
+
+
+
 
 window.onload = function(){
   let name = prompt("What is your name")
@@ -8,18 +21,89 @@ window.onload = function(){
   space.innerHTML = name + "'s money";
 }
 
-let money = document.getElementById("money");
-function moneyClick(){
-  num+=1;
 
-  let numbers=document.getElementById("numbers");
-  //upgrade level for printing
-  let upgradeLevel = document.getElementById("upgradeLevel");
 
-  numbers.innerHTML = num;
-  // baller upgrades to 2x
-} if(num>= 30){
-  num +=2;
-  upgradeLevel.innerHTML="Baller Level"
+
+
+function buyballer(){
+  if (score >= ballerCost) {
+    score = score - ballerCost;
+    baller = baller + 1;
+    ballerCost = Math.round(ballerCost * 2);
+
+    document.getElementById("score").innerHTML = score;
+    document.getElementById("ballerCost").innerHTML = ballerCost;
+    document.getElementById("baller").innerHTML = cursors;
+  }
 }
+function buyLoaded(){
+  if (score >= loadedCost) {
+    score = score - loadedCost;
+    loaded = loaded + 1;
+    loadedCost = Math.round(loadedCost * 150);
+
+    document.getElementById("score").innerHTML = score;
+    document.getElementById("loadedCost").innerHTML = loadedCost;
+    document.getElementById("loaded").innerHTML = loaded;
+  }
+}
+
+function buyDinero(){
+  if (score >= DineroCost) {
+    score = score - DineroCost;
+    Dinero = Dinero + 1;
+    DineroCost = Math.round(DineroCost * 500);
+
+    document.getElementById("score").innerHTML = score;
+    document.getElementById("DineroCost").innerHTML = DineroCost;
+    document.getElementById("Dinero").innerHTML = $$$;
+  }
+}
+
+function buyBigshot(){
+  if (score >= bigshotCost) {
+    score = score - bigshotCost;
+    bigshot = bigshot + 1;
+    bigshotCost = Math.round(bigshotCost * 100000);
+
+    document.getElementById("score").innerHTML = score;
+    document.getElementById("bigshotCost").innerHTML = bigshotCost;
+    document.getElementById("bigshot").innerHTML = bigshot;
+  }
+}
+
+
+
+function addToScore(amount) {
+  score = score + amount;
+  document.getElementById("score").innerHTML = score;
+}
+
+let money = document.getElementById("money")
+
+function moneyClick() {
+num += 1;
+
+  let score=document.getElementById("score");
+  //upgrade level for printing
+  let upgradeLevel = document.getElementById("score");
+  
+  score.innerHTML = num;
+  // baller upgrades to 2x
+  } if(num>= 5){
+  num *2;
+  upgradeLevel.innerHTML="Baller Level"
+  }
+  // roling in the doe
+  if(num >= 10){
+  num+=12;
+  upgradeLevel.innerHTML="rolling in the doe"
+  }
+  
+  // printing money
+  if(num >= 15) {
+  num+=16;
+  upgradeLevel.innerHTML = "printing";
+  }
+
 
