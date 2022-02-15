@@ -1,12 +1,35 @@
-let num = 0
-var score = 0;
+let score = 0;
+
+// NOTE put each upgrade in a dictionary like the one below
+let upgrades = {
+  baller: {
+    price: 50,
+    multiplier: 2,
+    quantity: 0
+  },
+  loaded: {
+    price: 150,
+    multiplier: 5,
+    quantity: 0
+  },
+  dinero: {
+    price: 500,
+    multiplier: 20,
+    quantity: 0
+  },
+  bigshot: {
+    price: 1000000,
+    multiplier: 1000,
+    quantity: 0
+  }
+}
 
 let ballerCost = 50;
 let baller = 0 
 let loadedCost = 150;
 let loaded = 0
-let DineroCost = 500;
-let Dinero = 0
+let dineroCost = 500;
+let dinero = 0
 let bigshotCost = 100000;
 let bigshot = 0
 
@@ -24,57 +47,78 @@ window.onload = function(){
 
 
 
-
-function buyballer(){
-  if (score >= ballerCost) {
-    score = score - ballerCost;
-    baller = baller + 1;
-    ballerCost = Math.round(ballerCost * 2);
-
+function buyBaller(){
+  console.log('buy baller');
+  if (score >= upgrades['baller'].price) {
+    score -= upgrades['baller'].price;
+    upgrades['baller'].quantity++
+    upgrades['baller'].price += 50
+    // NOTE make sure that all of these id's exist on your HTML page
     document.getElementById("score").innerHTML = score;
-    document.getElementById("ballerCost").innerHTML = ballerCost;
-    document.getElementById("baller").innerHTML = cursors;
+    document.getElementById("ballerCost").innerText = upgrades['baller'].price;
+    // NOTE change below to the quantity of the upgrade
+    document.getElementById("ballerQuantity").innerText = upgrades['baller'].quantity;
+    // document.getElementById("baller").innerHTML = baller;
   }
 }
 function buyLoaded(){
-  if (score >= loadedCost) {
-    score = score - loadedCost;
-    loaded = loaded + 1;
-    loadedCost = Math.round(loadedCost * 150);
-
+  console.log('buy loaded');
+  if (score >= upgrades['loaded'].price) {
+    score -= upgrades['loaded'].price;
+    upgrades['loaded'].quantity++
+    upgrades['loaded'].price += 150
+    // NOTE make sure that all of these id's exist on your HTML page
     document.getElementById("score").innerHTML = score;
-    document.getElementById("loadedCost").innerHTML = loadedCost;
-    document.getElementById("loaded").innerHTML = loaded;
+    document.getElementById("loadedCost").innerText = upgrades['loaded'].price;
+    // NOTE change below to the quantity of the upgrade
+    document.getElementById("loadedQuantity").innerText = upgrades['loaded'].quantity;
+    // document.getElementById("loaded").innerHTML = loaded;
   }
 }
 
 function buyDinero(){
-  if (score >= DineroCost) {
-    score = score - DineroCost;
-    Dinero = Dinero + 1;
-    DineroCost = Math.round(DineroCost * 500);
-
+  console.log('buy dinero');
+  if (score >= upgrades['dinero'].price) {
+    score -= upgrades['dinero'].price;
+    upgrades['dinero'].quantity++
+    upgrades['dinero'].price += 500
+    // NOTE make sure that all of these id's exist on your HTML page
     document.getElementById("score").innerHTML = score;
-    document.getElementById("DineroCost").innerHTML = DineroCost;
-    document.getElementById("Dinero").innerHTML = $$$;
+    document.getElementById("dineroCost").innerText = upgrades['dinero'].price;
+    // NOTE change below to the quantity of the upgrade
+    document.getElementById("dineroQuantity").innerText = upgrades['dinero'].quantity;
+    // document.getElementById("dinero").innerHTML = dinero;
   }
 }
 
 function buyBigshot(){
-  if (score >= bigshotCost) {
-    score = score - bigshotCost;
-    bigshot = bigshot + 1;
-    bigshotCost = Math.round(bigshotCost * 100000);
-
+  console.log('buy bigshot');
+  if (score >= upgrades['bigshot'].price) {
+    score -= upgrades['bigshot'].price;
+    upgrades['bigshot'].quantity++
+    upgrades['bigshot'].price += 25
+    // NOTE make sure that all of these id's exist on your HTML page
     document.getElementById("score").innerHTML = score;
-    document.getElementById("bigshotCost").innerHTML = bigshotCost;
-    document.getElementById("bigshot").innerHTML = bigshot;
+    document.getElementById("bigshotCost").innerText = upgrades['bigshot'].price;
+    // NOTE change below to the quantity of the upgrade
+    document.getElementById("bigshotQuantity").innerText = upgrades['bigshot'].quantity;
+    // document.getElementById("bigshot").innerHTML = bigshot;
   }
 }
 
 
 
+
+
+
 function addToScore(amount) {
+  for (const key in object) {
+    if (Object.hasOwnProperty.call(object, key)) {
+      const element = object[key];
+      
+    }
+  }
+  // NOTE iterate through the upgrades dictionary (for in loop), and make sure to check each upgrades quantity, then add the amount of quantity by the amount of multiplier ie - score += multiplier * quantity
   score = score + amount;
   document.getElementById("score").innerHTML = score;
 }
@@ -82,33 +126,40 @@ function addToScore(amount) {
 let money = document.getElementById("money")
 
 function moneyClick() {
-num += 1;
+score += 1;
 
-  let score=document.getElementById("score");
-  //upgrade level for printing
+  let scoreElem=document.getElementById("score");
+  //upgrade level for 
   let upgradeLevel = document.getElementById("score");
   
-  score.innerHTML = num;
-  // baller upgrades to 2x
-  } if(num>= 50){
-  num *2;
+  if(score>= 50){
+  score *2;
   upgradeLevel.innerHTML="Baller"
   }
   // 
-  if(num >= 150){
-  num *5;
+  if(score >= 150){
+  score *5;
   upgradeLevel.innerHTML="loaded"
   }
   
   // 
-  if(num >= 500) {
-  num *20;
+  if(score >= 500) {
+  score *20;
   upgradeLevel.innerHTML = "Dinero";
   }
-
-  if(num >= 500) {
-    num *1000;
+  
+  if(score >= 500) {
+    score *1000;
     upgradeLevel.innerHTML = "bigshot";
     }
-  
-
+    scoreElem.innerHTML = score;
+    // baller upgrades to 2x
+    
+} 
+setInterval(function(){
+score = score + baller * 2
+score = score + loaded * 5
+score = score + dinero * 20
+score = score + bigshot * 1000
+document.getElementById("score").innerHTML = score;
+}, 3000);

@@ -24,11 +24,11 @@
       </div>
     </div>
   </div>
-  <button onclick="buyBaller()">Baller { <span id="buyBaller">$50</span>} -- <span id="buyBaller">2X</span></button>
-  <button onclick="buyLoaded()">loaded { <span id="buyLoaded">$150</span>} -- <span id="buyLoaded">5X</span></button>
-  <button onclick="buyDinero()">Dinero { <span id="buyDinero">$500</span>} -- <span id="buyDinero">20X</span></button>
-  <button onclick="buybigshot()">BigShot { <span id="buybigshot">$1000000</span>} -- <span
-      id="buybigshot">1000X</span></button>
+  <button onclick="buyBaller()">Baller { <span id="ballerCost">$50</span>} -- <span id="buyBaller">2X</span></button>
+  <button onclick="buyLoaded()">loaded { <span id="loadedCost">$150</span>} -- <span id="buyLoaded">5X</span></button>
+  <button onclick="buyDinero()">Dinero { <span id="dineroCost">$500</span>} -- <span id="buyDinero">20X</span></button>
+  <button onclick="buyBigshot()">BigShot { <span id="bigshotCost">$1000000</span>} -- <span
+      id="buyBigshot">1000X</span></button>
 
 
   <p class="How">AMOUNT OF MONEY</p>
@@ -41,21 +41,21 @@
     <tr>
       <td>baller!</td>
       <td>baller Makes makes a mulitiplyer of 2X</td>
-      <td>$50</td>
+      <td><span id="ballerQuantity"></span></td>
     </tr>
 
     <td>loaded!</td>
     <td>loaded! makes a mulitiplyer of 5X</td>
-    <td>$150</td>
+    <td><span id="loadedQuantity"></span></td>
     </tr>
 
     <td>Dinero</td>
     <td>Dinero a mulitiplyer of 20X</td>
-    <td>$500</td>
+    <td><span id="dineroQuantity"></span></td>
     </tr>
-    <td>Mr.Big Shot</td>
-    <td>Mr Big Shot Makes makes a mulitiplyer of 1000X</td>
-    <td>$100000</td>
+    <td>Big Shot</td>
+    <td>Big Shot Makes makes a mulitiplyer of 1000X</td>
+    <td><span id="bigshotQuantity"></span></td>
     </tr>
 
   </table>
